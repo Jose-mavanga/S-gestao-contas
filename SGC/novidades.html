@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SGC - Novidades</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="page page-center">
+    <div class="hero">
+      <h1>Sistema de Gestão de Contas (SGC)</h1>
+      <p class="hero-subtitle">
+        Guarde e organize as credenciais dos seus serviços num único lugar,
+        com acesso simples e seguro.
+      </p>
+
+      <!-- SLIDER DE 3 CARDS - INTRODUÇÃO AO SISTEMA -->
+      <div class="cards-slider" aria-label="Novidades do sistema">
+        <button class="slider-arrow left" onclick="prevSlide()">&lt;</button>
+
+        <div class="cards-track" id="cardsTrack">
+          <!-- CARD 1 -->
+          <article class="card">
+            <h2>1. O que o SGC faz?</h2>
+            <p>
+              O SGC ajuda a <strong>guardar logins de vários serviços</strong>
+              (Facebook, Gmail, Instagram, etc.) organizados por usuário.
+            </p>
+            <p>
+              Cada utilizador enxerga apenas as suas próprias contas, facilitando
+              a gestão do dia a dia.
+            </p>
+          </article>
+
+          <!-- CARD 2 -->
+          <article class="card">
+            <h2>2. Como funciona?</h2>
+            <p>
+              Após o login, você entra no painel de usuário, onde pode
+              <strong>listar, criar e apagar contas</strong> com poucos cliques.
+            </p>
+            <p>
+              Administradores têm um painel especial para
+              <strong>gerir todos os utilizadores</strong> do sistema.
+            </p>
+          </article>
+
+          <!-- CARD 3 -->
+          <article class="card">
+            <h2>3. Onde ficam os dados?</h2>
+            <p>
+              Nesta versão, os dados ficam guardados no
+              <strong>próprio navegador (localStorage)</strong>, ideal para
+              testes, estudos e uso local.
+            </p>
+            <p>
+              Futuramente, você pode trocar facilmente para uma API/BD real.
+            </p>
+          </article>
+        </div>
+
+        <button class="slider-arrow right" onclick="nextSlide()">&gt;</button>
+      </div>
+
+      <!-- INDICADORES DO SLIDE -->
+      <div class="slider-dots" id="sliderDots">
+        <button class="dot active" onclick="goToSlide(0)"></button>
+        <button class="dot" onclick="goToSlide(1)"></button>
+        <button class="dot" onclick="goToSlide(2)"></button>
+      </div>
+
+      <!-- BLOCO DE CONTACTOS / REDES DO PROGRAMADOR -->
+      <section class="panel contacts">
+        <h2>Contacto do responsável</h2>
+        <p>
+          Telefone / WhatsApp:
+          <a href="tel:+258878731241">+258 87 873 1241</a>
+        </p>
+        <p>
+          Facebook:
+          <a href="https://facebook.com/josemavanga" target="_blank"
+            >jose mavanga</a
+          >
+        </p>
+        <p>
+          Email:
+          <a href="mailto:josemavanga1616@gmail.com"
+            >josemavanga1616@gmail.com</a
+          >
+        </p>
+      </section>
+
+      <button class="btn-primary" onclick="irParaLogin()">Ir para o Login</button>
+
+      <p class="copyright">
+        &copy; <span id="anoAtual"></span> SGC - Sistema de Gestão de Contas.
+      </p>
+    </div>
+
+    <script>
+      // ==============================
+      // SLIDER SIMPLES DE 3 CARDS
+      // (pode trocar/estender aqui)
+      // ==============================
+      let slideAtual = 0;
+      const totalSlides = 3;
+
+      function atualizarSlider() {
+        const track = document.getElementById("cardsTrack");
+        const dots = document.querySelectorAll(".dot");
+
+        const offset = -slideAtual * 100;
+        track.style.transform = "translateX(" + offset + "%)";
+
+        dots.forEach((d, i) => {
+          d.classList.toggle("active", i === slideAtual);
+        });
+      }
+
+      function goToSlide(i) {
+        slideAtual = i;
+        if (slideAtual < 0) slideAtual = 0;
+        if (slideAtual > totalSlides - 1) slideAtual = totalSlides - 1;
+        atualizarSlider();
+      }
+
+      function nextSlide() {
+        slideAtual = (slideAtual + 1) % totalSlides;
+        atualizarSlider();
+      }
+
+      function prevSlide() {
+        slideAtual = (slideAtual - 1 + totalSlides) % totalSlides;
+        atualizarSlider();
+      }
+
+      // AUTO-SLIDE LEVE (pode remover se quiser)
+      setInterval(nextSlide, 8000);
+
+      // ==============================
+      // NAVEGAÇÃO PARA LOGIN
+      // ==============================
+      function irParaLogin() {
+        window.location.href = "index.html";
+      }
+
+      // ==============================
+      // ANO DINÂMICO NO RODAPÉ
+      // ==============================
+      document.getElementById("anoAtual").innerText =
+        new Date().getFullYear();
+
+      // Ajusta posição inicial
+      atualizarSlider();
+    </script>
+  </body>
+</html>
+

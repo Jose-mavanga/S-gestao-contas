@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title> Admin</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body class="page">
+
+      <nav>
+        <a href="admin.html">Usuários</a>
+        <a href="index.html" onclick="logoutAdmin()">Sair</a>
+      </nav>
+
+      <div class="container">
+        <div class="header-row">
+          <h2>Painel Admin</h2>
+          <button class="btn-secondary" onclick="voltar()">Voltar</button>
+        </div>
+
+        <section class="panel">
+          <h3>Criar usuário</h3>
+          <div class="grid-2">
+            <input type="text" id="novoUser" placeholder="Usuário">
+            <input type="password" id="novaSenha" placeholder="Senha">
+            <select id="novoRole">
+              <option value="user" selected>user</option>
+              <option value="admin">admin</option>
+            </select>
+            <button onclick="criarUsuario()">Criar</button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="header-row">
+            <h3>Usuários</h3>
+            <input class="input-sm" type="text" id="filtroUsuario" placeholder="Pesquisar por usuário..." oninput="render()">
+          </div>
+
+          <div class="table-wrap">
+            <table class="table" aria-label="Tabela de usuários">
+              <thead>
+                <tr>
+                  <th>Usuário</th>
+                  <th>Role</th>
+                  <th>Senha</th>
+                  <th class="col-actions">Ações</th>
+                </tr>
+              </thead>
+              <tbody id="listaUsuarios"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <script src="js/admin.js"></script>
+    </body>
+</html>

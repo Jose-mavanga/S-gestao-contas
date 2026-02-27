@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+
+        <meta charset="UTF-8">
+        <title>SGC - Login</title>
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body class="page page-center">
+
+        <div class="panel panel-sm">
+            <h2>Sistema de Gestão de Contas</h2>
+
+            <input type="text" id="username" placeholder="Usuário">
+            <input type="password" id="password" placeholder="Senha">
+
+            <button onclick="login()">Entrar</button>
+
+            <p class="copyright">
+                ©<span id="ano"></span>Josemavanga1616. Todos os direitos reservados!
+            </p>
+            <script>document.getElementById("ano").textContent = new Date().getFullYear();</script>
+
+            <p id="erro"></p>
+        </div>
+
+        <script src="js/auth.js"></script>
+    </body>
+</html>
