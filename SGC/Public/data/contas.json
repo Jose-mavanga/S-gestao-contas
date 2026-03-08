@@ -1,0 +1,23 @@
+[
+    {
+        "usuario": "joao",
+        "servico": "Facebook",
+        "email": "joao@facebook.com",
+        "senha": "fb123",
+        "criado_em": "2022-01-10"
+    },
+    {
+        "usuario": "joao",
+        "servico": "Instagram",
+        "email": "joao@instagram.com",
+        "senha": "ig123",
+        "criado_em": "2023-01-10"
+    },
+    {
+        "usuario": "joao",
+        "servico": "Google",
+        "email": "joao@Google.com",
+        "senha": "fb123",
+        "criado_em": "2021-01-10"
+    }
+]

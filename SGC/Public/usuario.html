@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>SGC - Usuario</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+  <body class="page">
+
+    <nav>
+        <a href="usuario.html">Minhas Contas</a>
+        <a href="index.html" onclick="logout()">Sair</a>
+    </nav>
+
+    <div class="container">
+        <h2 id="bemVindo"></h2>
+
+        <!-- BLOCO DE LISTAGEM DE CONTAS DO USUÁRIO -->
+        <section class="panel">
+            <h3>Minhas Contas</h3>
+            <div id="contas"></div>
+        </section>
+
+        <!-- BLOCO DE CRIAÇÃO DE NOVA CONTA -->
+        <section class="panel nova-conta">
+            <h3>Adicionar nova conta</h3>
+            <form onsubmit="criarConta(event)">
+                <div class="grid-2">
+                    <input type="text" id="novoServico" placeholder="Serviço">
+                    <input type="email" id="novoEmail" placeholder="Email">
+                </div>
+                <div class="grid-2">
+                    <input type="text" id="novaSenhaConta" placeholder="Senha">
+                    <button type="submit">Salvar conta</button>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <script src="js/usuario.js"></script>
+  </body>
+  </html>
